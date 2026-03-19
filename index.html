@@ -330,7 +330,10 @@
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#cocreate">Co-Create</a></li>
     </ul>
-    <a href="https://nalkudilstudio.github.io" class="nav-back">← Back to Studio</a>
+    <div style="display:flex; gap:20px; align-items:center;">
+      <a href="https://nalkudilstudio.github.io/spouse-docs/privacy-policy" class="nav-back">Privacy Policy</a>
+      <a href="https://nalkudilstudio.github.io" class="nav-back">← Back to Studio</a>
+    </div>
   </nav>
 
   <!-- HERO -->
@@ -673,7 +676,7 @@
     <div class="footer-links">
       <a href="https://nalkudilstudio.github.io">Studio Home</a>
       <a href="https://nalkudilstudio.github.io/spouse-docs/privacy-policy">Privacy Policy</a>
-      <a href="mailto:nalkudilstudio@gmail.com">Contact</a>
+      <a href="/cdn-cgi/l/email-protection#5a343b36312f3e3336292e2f3e33351a3d373b333674393537">Contact</a>
       <a href="https://youtube.com/@nalkudil" target="_blank">YouTube</a>
       <a href="https://instagram.com/nalkudil" target="_blank">Instagram</a>
       <a href="https://github.com/nalkudilstudio" target="_blank">GitHub</a>
@@ -683,16 +686,9 @@
     </p>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     function toggleFaq(btn) {
       const item = btn.parentElement;
       const isOpen = item.classList.contains('open');
       // Close all
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      // Open clicked if it was closed
-      if (!isOpen) item.classList.add('open');
-    }
-  </script>
-
-</body>
-</html>
+      document.querySelectorAll('.faq-item').forEach(
