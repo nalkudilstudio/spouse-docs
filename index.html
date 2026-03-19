@@ -222,29 +222,30 @@
       transition: border-color 0.2s;
     }
     .faq-item:hover { border-color: rgba(29,191,176,0.2); }
+    .faq-item[open] { border-color: rgba(29,191,176,0.25); }
     .faq-q {
       width: 100%; background: none; border: none;
       padding: 20px 24px; cursor: pointer;
       display: flex; align-items: center; justify-content: space-between;
-      gap: 16px; text-align: left;
+      gap: 16px; text-align: left; list-style: none;
     }
+    .faq-q::-webkit-details-marker { display: none; }
     .faq-q-text {
       font-size: 15px; font-weight: 600; color: var(--text);
       font-family: 'Inter', sans-serif;
     }
     .faq-icon {
-      color: var(--teal); font-size: 20px;
+      color: var(--teal); font-size: 22px; font-weight: 300;
       transition: transform 0.3s; flex-shrink: 0;
-      font-family: monospace;
+      font-family: monospace; line-height: 1;
     }
-    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-item[open] .faq-icon { transform: rotate(45deg); }
     .faq-a {
-      display: none; padding: 0 24px 20px;
+      padding: 0 24px 20px;
       color: var(--muted); font-size: 14px; line-height: 1.8;
       border-top: 1px solid var(--border);
       padding-top: 16px;
     }
-    .faq-item.open .faq-a { display: block; }
 
     /* ── CO-CREATE CTA ── */
     .cocreate {
@@ -557,75 +558,69 @@
 
     <div class="faq-list">
 
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
+
+      <!-- FAQ 1 -->
+      <details class="faq-item">
+        <summary class="faq-q">
           <span class="faq-q-text">Can my partner see my private journal entries?</span>
           <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">
-          No. Journal entries marked as private are encrypted and visible only to you. Shared entries are visible to both partners. All content — private or shared — is encrypted using your unique couple ID, meaning it cannot be read by anyone outside your pairing, including us.
-        </div>
-      </div>
+        </summary>
+        <div class="faq-a">No. Journal entries marked as private are encrypted and visible only to you. Shared entries are visible to both partners. All content is encrypted using your unique couple ID — it cannot be read by anyone outside your pairing, including us.</div>
+      </details>
 
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
+      <!-- FAQ 2 -->
+      <details class="faq-item">
+        <summary class="faq-q">
           <span class="faq-q-text">How does the Love Meter score work?</span>
           <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">
-          The Love Meter starts at 50 and goes up to 100. Every action you take in the app — sending a nudge, answering AMA, writing a journal entry, completing a goal, finishing a Surprise Mission — adds points. If both partners go quiet for a day, the score gently decays. You can turn decay off in Settings → Nuances. The score reflects effort, not perfection.
-        </div>
-      </div>
+        </summary>
+        <div class="faq-a">The Love Meter starts at 50 and goes up to 100. Every action — nudge, AMA answer, journal entry, goal, Surprise Mission — adds points. If both partners go quiet for a day, the score gently decays. You can turn decay off in Settings → Nuances. The score reflects effort, not perfection.</div>
+      </details>
 
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
+      <!-- FAQ 3 -->
+      <details class="faq-item">
+        <summary class="faq-q">
           <span class="faq-q-text">What happens if I disconnect my partner?</span>
           <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">
-          Disconnecting removes the link between your two accounts. Your data — journals, memories, goals — stays safely in the cloud. Neither partner loses their history. You can re-pair at any time using a new pairing code. To disconnect, go to Settings → Partnership → Disconnect Partner.
-        </div>
-      </div>
+        </summary>
+        <div class="faq-a">Disconnecting removes the link between your two accounts. Your data — journals, memories, goals — stays safely in the cloud. Neither partner loses their history. You can re-pair at any time using a new pairing code. Go to Settings → Partnership → Disconnect Partner.</div>
+      </details>
 
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
+      <!-- FAQ 4 -->
+      <details class="faq-item">
+        <summary class="faq-q">
           <span class="faq-q-text">Is my data private and encrypted?</span>
           <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">
-          Yes — absolutely. All sensitive content (journals, compliments, AMA answers, bucket list, mood entries) is encrypted on your device before being stored. Your couple ID is the encryption key — meaning even we cannot read your content. Data is stored on Google Firebase, which is ISO 27001 and GDPR compliant. We do not sell your data, show ads, or use your content for any AI training.
-        </div>
-      </div>
+        </summary>
+        <div class="faq-a">Yes — absolutely. All sensitive content is encrypted on your device before being stored. Your couple ID is the encryption key — even we cannot read your content. Data is stored on Google Firebase (ISO 27001 and GDPR compliant). We do not sell your data, show ads, or use your content for AI training.</div>
+      </details>
 
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
+      <!-- FAQ 5 -->
+      <details class="faq-item">
+        <summary class="faq-q">
           <span class="faq-q-text">How do I change my nickname?</span>
           <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">
-          Open the side drawer (tap your profile photo in the top left) → tap My Profile. From there you can update your nickname, your partner's nickname, anniversary date, and birthday. Changes reflect immediately across the app.
-        </div>
-      </div>
+        </summary>
+        <div class="faq-a">Open the side drawer (tap your profile photo top left) → tap My Profile. Update your nickname, your partner's nickname, anniversary date, and birthday. Changes reflect immediately across the app.</div>
+      </details>
 
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
+      <!-- FAQ 6 -->
+      <details class="faq-item">
+        <summary class="faq-q">
           <span class="faq-q-text">What is Resonance and how is it calculated?</span>
           <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">
-          Resonance is your compatibility snapshot across 5 dimensions — Values Affinity, Habits Sync, Love Language Resonance, Fun Factor, and Communication. Both partners fill in their perspectives independently. The app compares them and generates a radar chart showing where you're aligned and where you might want to grow. It's not a grade — it's a conversation starter. Access it from the drawer → Resonance.
-        </div>
-      </div>
+        </summary>
+        <div class="faq-a">Resonance is your compatibility snapshot across 5 dimensions — Values Affinity, Habits Sync, Love Language Resonance, Fun Factor, and Communication. Both partners answer independently and the app generates a radar chart. It's not a grade — it's a conversation starter. Access it from the drawer → Resonance.</div>
+      </details>
 
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
+      <!-- FAQ 7 -->
+      <details class="faq-item">
+        <summary class="faq-q">
           <span class="faq-q-text">Can I use Spouse without pairing with a partner?</span>
           <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">
-          Some features like the personal journal (Memories) and Bucket List work in solo mode. However, the core experience — Nudge, AMA reveals, Love Meter, Pulse, Honesty Hub — require both partners to be paired. We recommend pairing before exploring the full app so you get the complete Spouse experience from day one.
-        </div>
-      </div>
+        </summary>
+        <div class="faq-a">Some features like the personal journal (Memories) and Bucket List work solo. However the core experience — Nudge, AMA reveals, Love Meter, Pulse, Honesty Hub — requires both partners to be paired. We recommend pairing before exploring so you get the full Spouse experience from day one.</div>
+      </details>
 
     </div>
   </section>
@@ -638,32 +633,16 @@
       <p class="cocreate-label">Co-Create the Future</p>
       <h2>Shape What We Build Next 💡</h2>
       <p>Spouse is built <em>with</em> our community, not just <em>for</em> them. Have an idea that could make every couple's experience richer? We want to hear it — and we build the best ideas into the app.</p>
-
       <div class="cocreate-steps">
-        <div class="cocreate-step">
-          <span>01</span> Open the Spouse app
-        </div>
-        <div class="cocreate-step">
-          <span>→</span>
-        </div>
-        <div class="cocreate-step">
-          <span>02</span> Go to Settings
-        </div>
-        <div class="cocreate-step">
-          <span>→</span>
-        </div>
-        <div class="cocreate-step">
-          <span>03</span> Tap "Co-Create Roadmap"
-        </div>
-        <div class="cocreate-step">
-          <span>→</span>
-        </div>
-        <div class="cocreate-step">
-          <span>04</span> Propose your idea ✨
-        </div>
+        <div class="cocreate-step"><span>01</span> Open the Spouse app</div>
+        <div class="cocreate-step"><span>→</span></div>
+        <div class="cocreate-step"><span>02</span> Go to Settings</div>
+        <div class="cocreate-step"><span>→</span></div>
+        <div class="cocreate-step"><span>03</span> Tap "Co-Create Roadmap"</div>
+        <div class="cocreate-step"><span>→</span></div>
+        <div class="cocreate-step"><span>04</span> Propose your idea ✨</div>
       </div>
-
-      <p style="font-size: 13px; color: var(--muted); margin-bottom: 0;">You can also upvote existing ideas and track what's being built in real time.<br/>Every proposal is read personally by the Nalkudil Studio team.</p>
+      <p style="font-size:13px; color:var(--muted); margin-bottom:0;">You can also upvote existing ideas and track what's being built in real time.<br/>Every proposal is read personally by the Nalkudil Studio team.</p>
     </div>
   </section>
 
@@ -674,9 +653,9 @@
       <span style="color:var(--gold)"> STUDIO</span>
     </div>
     <div class="footer-links">
-      <a href="https://nalkudilstudio.github.io">Studio Home</a>
+      <a href="https://nalkudilstudio.github.io">← Studio Home</a>
       <a href="https://nalkudilstudio.github.io/spouse-docs/privacy-policy">Privacy Policy</a>
-      <a href="/cdn-cgi/l/email-protection#5a343b36312f3e3336292e2f3e33351a3d373b333674393537">Contact</a>
+      <a href="mailto:nalkudilstudio@gmail.com">Contact</a>
       <a href="https://youtube.com/@nalkudil" target="_blank">YouTube</a>
       <a href="https://instagram.com/nalkudil" target="_blank">Instagram</a>
       <a href="https://github.com/nalkudilstudio" target="_blank">GitHub</a>
@@ -686,9 +665,5 @@
     </p>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    function toggleFaq(btn) {
-      const item = btn.parentElement;
-      const isOpen = item.classList.contains('open');
-      // Close all
-      document.querySelectorAll('.faq-item').forEach(
+</body>
+</html>
